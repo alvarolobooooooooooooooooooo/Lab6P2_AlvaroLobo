@@ -441,9 +441,9 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="jButton6" max="32767" attributes="0"/>
-                                      <Component id="jButton5" max="32767" attributes="0"/>
-                                      <Component id="tf_nombreitem1" pref="186" max="32767" attributes="0"/>
-                                      <Component id="tf_nombreitem2" alignment="0" pref="186" max="32767" attributes="0"/>
+                                      <Component id="b_colorPuffle" max="32767" attributes="0"/>
+                                      <Component id="tf_precioPuffle" pref="186" max="32767" attributes="0"/>
+                                      <Component id="tf_nombrePuffle" alignment="0" pref="186" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               </Group>
@@ -459,15 +459,15 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="tf_nombreitem2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tf_nombrePuffle" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jButton5" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="b_colorPuffle" min="-2" pref="20" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="tf_nombreitem1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tf_precioPuffle" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -526,26 +526,32 @@
                     <Property name="text" type="java.lang.String" value="Nombre"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tf_nombreitem1">
+                <Component class="javax.swing.JTextField" name="tf_precioPuffle">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel18">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Color"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton5">
+                <Component class="javax.swing.JButton" name="b_colorPuffle">
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="b_colorPuffleMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel19">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Precio"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tf_nombreitem2">
+                <Component class="javax.swing.JTextField" name="tf_nombrePuffle">
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton6">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Guardar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton6MouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

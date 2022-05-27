@@ -1,5 +1,7 @@
 
+import java.awt.Color;
 import java.util.ArrayList;
+import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -63,11 +65,11 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         t_puffles = new javax.swing.JTable();
         jLabel17 = new javax.swing.JLabel();
-        tf_nombreitem1 = new javax.swing.JTextField();
+        tf_precioPuffle = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        b_colorPuffle = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
-        tf_nombreitem2 = new javax.swing.JTextField();
+        tf_nombrePuffle = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jd_ventanaUsuario = new javax.swing.JDialog();
@@ -320,9 +322,20 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel18.setText("Color");
 
+        b_colorPuffle.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_colorPuffleMouseClicked(evt);
+            }
+        });
+
         jLabel19.setText("Precio");
 
         jButton6.setText("Guardar");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -345,9 +358,9 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tf_nombreitem1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                            .addComponent(tf_nombreitem2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
+                            .addComponent(b_colorPuffle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tf_precioPuffle, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                            .addComponent(tf_nombrePuffle, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
                         .addGap(33, 33, 33))))
         );
         jPanel5Layout.setVerticalGroup(
@@ -358,15 +371,15 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel17)
                         .addGap(18, 18, 18)
-                        .addComponent(tf_nombreitem2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_nombrePuffle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(b_colorPuffle, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tf_nombreitem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_precioPuffle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton6))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -690,9 +703,33 @@ public class Principal extends javax.swing.JFrame {
             Object[] newrow = {casasJuego.get(i).getNombre(), casasJuego.get(i).getTamano(), casasJuego.get(i).getCosto(), casasJuego.get(i).getCordX(), casasJuego.get(i).getCordY()};
             DefaultTableModel modelocasas = (DefaultTableModel) t_casas.getModel();
             modelocasas.addRow(newrow);
+            t_casas.setModel(modelocasas);
         }
-        tf_
+        tf_nombreCasa.setText("");
+        tf_tamanoCasa.setText("");
+        tf_costoCasa.setText("");
+        tf_xCasa.setText("");
+        tf_yCasa.setText("");
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        String nombre = tf_nombrePuffle.getText();
+        int precio = (Integer.parseInt(tf_precioPuffle.getText()));
+        pufflesJuego.add(new Puffle(nombre, precio));
+        
+        for (int i = 0; i < pufflesJuego.size(); i++) {
+            Object[] newrow = {pufflesJuego.get(i).getNombre(), ColorPuffle, pufflesJuego.get(i).getPrecio()};
+            DefaultTableModel modelopuffles = (DefaultTableModel) t_puffles.getModel();
+            modelopuffles.addRow(newrow);
+            t_puffles.setModel(modelopuffles);
+            
+        }
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void b_colorPuffleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_colorPuffleMouseClicked
+        ColorPuffle =  JColorChooser.showDialog (jd_ventanaAdmin, "Color", Color.yellow);
+        b_colorPuffle.setBackground(ColorPuffle);
+    }//GEN-LAST:event_b_colorPuffleMouseClicked
 
     /**
      * @param args the command line arguments
@@ -730,12 +767,12 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton b_colorPuffle;
     private javax.swing.JComboBox<String> cb_tipoitem;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -781,9 +818,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable t_puffles;
     private javax.swing.JTextField tf_costoCasa;
     private javax.swing.JTextField tf_nombreCasa;
+    private javax.swing.JTextField tf_nombrePuffle;
     private javax.swing.JTextField tf_nombreitem;
-    private javax.swing.JTextField tf_nombreitem1;
-    private javax.swing.JTextField tf_nombreitem2;
+    private javax.swing.JTextField tf_precioPuffle;
     private javax.swing.JTextField tf_precioitem;
     private javax.swing.JTextField tf_tamanoCasa;
     private javax.swing.JTextField tf_usuariolog;
@@ -794,6 +831,8 @@ public class Principal extends javax.swing.JFrame {
     ArrayList <Cuenta> cuentas = new ArrayList();
     ArrayList <Item> itemsJuego = new ArrayList();
     ArrayList <Casa> casasJuego = new ArrayList();
+    ArrayList <Puffle> pufflesJuego = new ArrayList();
+    Color ColorPuffle;
     boolean admin = false;
     int posCuenta;
 }
