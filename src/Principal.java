@@ -46,7 +46,29 @@ public class Principal extends javax.swing.JFrame {
         cb_tipoitem = new javax.swing.JComboBox<>();
         jButton3 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        t_casas = new javax.swing.JTable();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        tf_tamanoCasa = new javax.swing.JTextField();
+        tf_costoCasa = new javax.swing.JTextField();
+        tf_nombreCasa = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        tf_xCasa = new javax.swing.JTextField();
+        tf_yCasa = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        t_puffles = new javax.swing.JTable();
+        jLabel17 = new javax.swing.JLabel();
+        tf_nombreitem1 = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        tf_nombreitem2 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jd_ventanaUsuario = new javax.swing.JDialog();
         jLabel2 = new javax.swing.JLabel();
@@ -143,7 +165,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(107, 107, 107)
                 .addComponent(jLabel9)
@@ -160,38 +182,195 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(49, 49, 49)
                     .addComponent(jLabel10)
-                    .addContainerGap(265, Short.MAX_VALUE)))
+                    .addContainerGap(320, Short.MAX_VALUE)))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(77, 77, 77)
                     .addComponent(tf_nombreitem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(231, Short.MAX_VALUE)))
+                    .addContainerGap(286, Short.MAX_VALUE)))
         );
 
         jTabbedPane2.addTab("Items", jPanel3);
+
+        t_casas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Tamano", "Costo", "X", "Y"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(t_casas);
+        if (t_casas.getColumnModel().getColumnCount() > 0) {
+            t_casas.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        jLabel12.setText("Nombre");
+
+        jLabel13.setText("Tamano");
+
+        jLabel14.setText("Costo");
+
+        jLabel15.setText("X");
+
+        jLabel16.setText("Y");
+
+        jButton4.setText("Guardar");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 561, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addGap(153, 153, 153)
+                .addComponent(jLabel14)
+                .addGap(67, 67, 67))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tf_nombreCasa, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tf_tamanoCasa, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(tf_costoCasa, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel15)
+                        .addGap(199, 199, 199)
+                        .addComponent(jLabel16)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(tf_xCasa, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(tf_yCasa, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_tamanoCasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_costoCasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_nombreCasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_xCasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_yCasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4))
+                .addGap(77, 77, 77))
         );
 
         jTabbedPane2.addTab("Casa", jPanel4);
+
+        t_puffles.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Color", "Precio"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Object.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(t_puffles);
+
+        jLabel17.setText("Nombre");
+
+        jLabel18.setText("Color");
+
+        jLabel19.setText("Precio");
+
+        jButton6.setText("Guardar");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 561, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addGap(115, 115, 115))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addGap(110, 110, 110))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addGap(114, 114, 114))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tf_nombreitem1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                            .addComponent(tf_nombreitem2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
+                        .addGap(33, 33, 33))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addGap(18, 18, 18)
+                        .addComponent(tf_nombreitem2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_nombreitem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton6))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Puffles", jPanel5);
@@ -204,7 +383,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGap(0, 385, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Juegos", jPanel6);
@@ -216,7 +395,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_ventanaAdminLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(209, 209, 209))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jd_ventanaAdminLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -228,8 +407,8 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -484,13 +663,13 @@ public class Principal extends javax.swing.JFrame {
         String nombre = tf_nombreitem.getText();
         int precio = (Integer.parseInt (tf_precioitem.getText()));
         String tipo = (String)cb_tipoitem.getSelectedItem();
-        cuentas.get(posCuenta).getItems().add(new Item(nombre, precio, tipo));
+        itemsJuego.add(new Item(nombre, precio, tipo));
         
-        for (int j = 0; j < cuentas.get(posCuenta).getItems().size(); j++) {
-            Object [] newrow = {cuentas.get(posCuenta).getItems().get(j).getNombre(), cuentas.get(posCuenta).getItems().get(j).getTipo(), cuentas.get(posCuenta).getItems().get(j).getPrecio()};
-            DefaultTableModel modelo = (DefaultTableModel) t_items.getModel();
-            modelo.addRow(newrow);
-            t_items.setModel(modelo);
+        for (int j = 0; j < itemsJuego.size(); j++) {
+            Object [] newrow = {itemsJuego.get(j).getNombre(), itemsJuego.get(j).getTipo(), itemsJuego.get(j).getPrecio()};
+            DefaultTableModel modeloitems = (DefaultTableModel) t_items.getModel();
+            modeloitems.addRow(newrow);
+            t_items.setModel(modeloitems);
         }   
         tf_nombreitem.setText("");
         tf_precioitem.setText("");
@@ -498,6 +677,22 @@ public class Principal extends javax.swing.JFrame {
             
                 
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        String nombre = tf_nombreCasa.getText();
+        int tamano = (Integer.parseInt(tf_tamanoCasa.getText()));
+        int costo = (Integer.parseInt(tf_costoCasa.getText()));
+        int cordX = (Integer.parseInt(tf_xCasa.getText()));
+        int cordY = (Integer.parseInt(tf_yCasa.getText()));
+        casasJuego.add(new Casa(nombre, tamano, costo, cordX, cordY));
+        
+        for (int i = 0; i < casasJuego.size(); i++) {
+            Object[] newrow = {casasJuego.get(i).getNombre(), casasJuego.get(i).getTamano(), casasJuego.get(i).getCosto(), casasJuego.get(i).getCordX(), casasJuego.get(i).getCordY()};
+            DefaultTableModel modelocasas = (DefaultTableModel) t_casas.getModel();
+            modelocasas.addRow(newrow);
+        }
+        tf_
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -539,9 +734,20 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -561,6 +767,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
@@ -568,13 +776,24 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog jd_ventanaUsuario;
     private javax.swing.JPasswordField pf_passlog;
     private javax.swing.JPasswordField pf_passreg;
+    private javax.swing.JTable t_casas;
     private javax.swing.JTable t_items;
+    private javax.swing.JTable t_puffles;
+    private javax.swing.JTextField tf_costoCasa;
+    private javax.swing.JTextField tf_nombreCasa;
     private javax.swing.JTextField tf_nombreitem;
+    private javax.swing.JTextField tf_nombreitem1;
+    private javax.swing.JTextField tf_nombreitem2;
     private javax.swing.JTextField tf_precioitem;
+    private javax.swing.JTextField tf_tamanoCasa;
     private javax.swing.JTextField tf_usuariolog;
     private javax.swing.JTextField tf_usuarioreg;
+    private javax.swing.JTextField tf_xCasa;
+    private javax.swing.JTextField tf_yCasa;
     // End of variables declaration//GEN-END:variables
     ArrayList <Cuenta> cuentas = new ArrayList();
+    ArrayList <Item> itemsJuego = new ArrayList();
+    ArrayList <Casa> casasJuego = new ArrayList();
     boolean admin = false;
     int posCuenta;
 }
