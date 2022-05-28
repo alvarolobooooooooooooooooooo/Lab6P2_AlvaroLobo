@@ -152,7 +152,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel10.setText("Nombre");
 
-        jLabel11.setText("TIpo");
+        jLabel11.setText("Tipo");
 
         cb_tipoitem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Sombreros", "Gafas", "Bufanda", "Chaqueta", "Pantalon", "Zapatos" }));
 
@@ -1028,6 +1028,16 @@ public class Principal extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         if (tf_usuariolog.getText().equals("p") && pf_passlog.getText().equals("p")) {
             admin = true;
+            usuarioActual = tf_usuariolog.getText();
+            for (int i = 0; i < cuentas.size(); i++) {
+                if (cuentas.get(i).getNombre().equals(usuarioActual)) {
+                    int dineroUsuario = cuentas.get(i).getDinero();
+                    cuentas.get(posCuenta).setDinero(dineroUsuario);
+                    int dinero = cuentas.get(posCuenta).getDinero();
+                    String dinero2 = String.valueOf(dinero);
+                    l_dineroUsuario.setText(dinero2);
+                }
+            }
             JOptionPane.showMessageDialog(this, "Bienvenido Administrador");
             tf_usuariolog.setText("");
             tf_usuarioreg.setText("");
@@ -1111,6 +1121,8 @@ public class Principal extends javax.swing.JFrame {
             t_pufflesStock.setModel(modelopuffles);
             
         }
+        tf_nombrePuffle.setText("");
+        tf_precioPuffle.setText("");
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void b_colorPuffleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_colorPuffleMouseClicked
@@ -1132,6 +1144,10 @@ public class Principal extends javax.swing.JFrame {
             t_juegos.setModel(modelojuegos);
             t_juegosUsuario.setModel(modelojuegos);
         }
+        tf_nombreJuego.setText("");
+        tf_costoJuego.setText("");
+        tf_recompensaCosto.setText("");
+        tf_probabilidadJuego.setText("");
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
@@ -1387,5 +1403,6 @@ public class Principal extends javax.swing.JFrame {
     Color ColorPuffle;
     boolean admin = false;
     boolean  casa = false;
+    String usuarioActual;
     int posCuenta;
 }
