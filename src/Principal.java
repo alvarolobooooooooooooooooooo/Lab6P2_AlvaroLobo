@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -791,6 +792,11 @@ public class Principal extends javax.swing.JFrame {
         jTabbedPane3.addTab("Mi Casa", jPanel9);
 
         jButton10.setText("Jugar");
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
 
         t_juegosUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1119,10 +1125,9 @@ public class Principal extends javax.swing.JFrame {
         int porcentaje = (Integer.parseInt(tf_probabilidadJuego.getText()));
         
         juegos.add(new Juego(nombre, costo, recompensa, porcentaje));
-        
+        DefaultTableModel modelojuegos = (DefaultTableModel) t_juegos.getModel();
         for (int i = 0; i < juegos.size(); i++) {
             Object[] newrow = {juegos.get(i).getNombre(), juegos.get(i).getCosto(), juegos.get(i).getRecompensa(), juegos.get(i).getProb()};
-            DefaultTableModel modelojuegos = (DefaultTableModel) t_juegos.getModel();
             modelojuegos.addRow(newrow);
             t_juegos.setModel(modelojuegos);
             t_juegosUsuario.setModel(modelojuegos);
@@ -1220,6 +1225,31 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(jd_ventanaUsuario, "Dinero insuficiente");
         }
     }//GEN-LAST:event_jButton12MouseClicked
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        if(t_juegosUsuario.getSelectedRow() >= 0){
+            int pos = t_juegosUsuario.getSelectedRow();
+            Random r = new Random();
+            int random = r.nextInt(100);
+            int compraJuego = cuentas.get(posCuenta).getDinero() - (int)t_juegosUsuario.getValueAt(pos, 1);
+            cuentas.get(posCuenta).setDinero(compraJuego);
+            int dinero = cuentas.get(posCuenta).getDinero();
+            String dinero2 = String.valueOf(dinero);
+            l_dineroUsuario.setText(dinero2);
+            if (random <= (int)t_juegosUsuario.getValueAt(pos, 3)) {
+                int gano = cuentas.get(posCuenta).getDinero() + (int)t_juegosUsuario.getValueAt(pos, 2);
+               cuentas.get(posCuenta).setDinero(gano);
+                dinero = cuentas.get(posCuenta).getDinero();
+                dinero2 = String.valueOf(dinero);
+                l_dineroUsuario.setText(dinero2);
+                JOptionPane.showMessageDialog(jd_ventanaUsuario, "Usted gano");
+            }
+            else{
+                JOptionPane.showMessageDialog(jd_ventanaUsuario, "Usted no gano");
+            }
+            
+        }
+    }//GEN-LAST:event_jButton10MouseClicked
 
     /**
      * @param args the command line arguments
