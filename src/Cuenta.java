@@ -8,7 +8,15 @@ public class Cuenta {
     private int dinero;
     private boolean socio;
     private ArrayList <Item> items = new ArrayList();
-    private ArrayList <Casa> casas = new ArrayList();
+    private Casa casa_usuario;
+
+    public Cuenta(String nombre, String pass, int dinero, boolean socio, Casa casa_usuario) {
+        this.nombre = nombre;
+        this.pass = pass;
+        this.dinero = dinero;
+        this.socio = socio;
+        this.casa_usuario = casa_usuario;
+    }
 
     public Cuenta(String nombre, String pass, int dinero, boolean socio) {
         this.nombre = nombre;
@@ -16,6 +24,7 @@ public class Cuenta {
         this.dinero = dinero;
         this.socio = socio;
     }
+    
 
     public String getNombre() {
         return nombre;
@@ -57,18 +66,20 @@ public class Cuenta {
         this.items = items;
     }
 
-    public ArrayList<Casa> getCasas() {
-        return casas;
+    public Casa getCasa_usuario() {
+        return casa_usuario;
     }
 
-    public void setCasas(ArrayList<Casa> casas) {
-        this.casas = casas;
+    public void setCasa_usuario(Casa casa_usuario) {
+        this.casa_usuario = casa_usuario;
     }
 
     @Override
     public String toString() {
-        return "Cuenta{" + "nombre=" + nombre + ", pass=" + pass + ", dinero=" + dinero + ", socio=" + socio + ", items=" + items + ", casas=" + casas + '}';
+        return "Cuenta{" + "nombre=" + nombre + ", pass=" + pass + ", dinero=" + dinero + ", socio=" + socio + ", items=" + items + ", casa_usuario=" + casa_usuario + '}';
     }
+
+
 
     
 
